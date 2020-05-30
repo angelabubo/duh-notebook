@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 function CreateArea(props) {
   const [newNote, setNewNote] = useState({
@@ -20,27 +23,41 @@ function CreateArea(props) {
       content: "",
     });
 
+    setExpanded(false);
+
     //Prevents reloading of entire page after form submit
     event.preventDefault();
   }
 
+  //Conditional rendering
+  const [isExpanded, setExpanded] = useState(false);
+  function handleClick() {
+    setExpanded(true);
+  }
+
   return (
     <div>
-      <form>
+      <form className="create-note">
         <input
           name="title"
           placeholder="Title"
           value={newNote.title}
           onChange={handleChange}
+          style={{ display: isExpanded ? "inline" : "none" }}
         />
         <textarea
           name="content"
           placeholder="Take a note..."
-          rows="3"
+          rows={isExpanded ? 3 : 1}
           value={newNote.content}
           onChange={handleChange}
+          onClick={handleClick}
         />
-        <button onClick={submitNote}>Add</button>
+        <Zoom in={isExpanded}>
+          <Fab onClick={submitNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
       </form>
     </div>
   );

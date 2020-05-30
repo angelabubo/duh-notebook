@@ -9,6 +9,7 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
 }
 
 header {
@@ -24,6 +25,10 @@ header h1 {
   font-weight: 200;
 }
 
+header h6 {
+  color: #555555;
+}
+
 footer {
   position: absolute;
   text-align: center;
@@ -33,7 +38,7 @@ footer {
 }
 
 footer p {
-  color: #ccc;
+  color: #555555;
 }
 .note {
   background: #fff;
@@ -58,17 +63,17 @@ footer p {
 .note button {
   position: relative;
   float: right;
-  margin-right: 20px;
+  margin-right: 10px;
   color: #f5ba13;
-  background: #fff;
   border: none;
   width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
+  background: #fff;
 }
 
-form {
+form.create-note {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
@@ -77,8 +82,8 @@ form {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
-form input,
-form textarea {
+form.create-note input,
+form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -87,7 +92,7 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
