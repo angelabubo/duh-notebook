@@ -6,7 +6,7 @@ function Header() {
     <header>
       <h1>
         <BorderColor />
-        The Notebook
+        Duh Notebook
       </h1>
       <h6>
         “I've learned that we're all entitled to have our secrets.” ― Nicholas
